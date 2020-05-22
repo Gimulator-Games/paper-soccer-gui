@@ -1,0 +1,163 @@
+<!doctype html>
+
+
+<html>
+<head>
+    <title>Paper Soccer</title>
+    <style>
+        body {
+            font-family: Arial;
+            color: black;
+        }
+
+        .hor_split {
+            height: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+        }
+
+        .ver_split {
+            width: 30%;
+            position: fixed;
+            z-index: 1;
+            right: 0;
+            overflow-y: hidden;
+        }
+
+        .top {
+            top: 0;
+            height: 40%;
+        }
+
+        .middle {
+            top: 40%;
+            height: 20%;
+        }
+
+        .bottom {
+            bottom: 0;
+            height: 40%;
+        }
+
+        .left {
+            left: 0;
+            background-color: green;
+            width: 70%;
+        }
+
+        .right {
+            right: 0;
+            background-color: deepskyblue;
+            width: 30%;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="hor_split left">
+    <svg class="centered" id="svgCanvas">
+    </svg>
+</div>
+
+<div class="hor_split right">
+    <div style="float: right; width: 100%; overflow-x: hidden; margin-top: 20%;">
+        <div style="position: relative;">
+            <div style="background: rgb(255, 255, 255); padding: 6px 6px 6px 0px; visibility: inherit;">
+                <div id="name" style="font-size: 115%; color: inherit; padding: 2px 6px;">Turn: Mamad</div>
+            </div>
+        </div>
+    </div>
+    <div style="float: right; width: 100%; overflow-x: hidden; margin-top: 20%;">
+        <div style="vertical-align: middle; line-height: 30px; background: rgba(0, 0, 0, 0.8); color: rgba(255, 255, 255, 0.95); font-weight: bold; padding: 0px 5px;">
+            #1
+        </div>
+        <div style="position: relative;">
+            <div style="background: rgb(255, 255, 255); padding: 6px 6px 6px 0px; visibility: inherit;">
+                <div id="upperPlayer" style="font-size: 115%; color: inherit; padding: 2px 6px;">Ali</div>
+            </div>
+        </div>
+        <div id="upperTime" style="vertical-align: middle; line-height: 30px; background: rgba(0, 0, 0, 0.8); color: rgba(255, 255, 255, 0.95); font-weight: bold; padding: 0px 5px;">
+            4:50
+        </div>
+    </div>
+    <div style="float: right; width: 100%; overflow-x: hidden; margin-top: 20%;">
+        <div style="position: relative;">
+            <div style="background: rgb(255, 255, 255); padding: 6px 6px 6px 0px; visibility: inherit;">
+                <div id="turn" style="font-size: 115%; color: inherit; padding: 2px 6px;">Turn: Mamad</div>
+            </div>
+        </div>
+    </div>
+    <div style="float: right; width: 100%; overflow-x: hidden; margin-top: 20%;">
+        <div style="vertical-align: middle; line-height: 30px; background: rgba(0, 0, 0, 0.8); color: rgba(255, 255, 255, 0.95); font-weight: bold; padding: 0px 5px;">
+            #2
+        </div>
+        <div style="position: relative;">
+            <div style="background: rgb(255, 255, 255); padding: 6px 6px 6px 0px; visibility: inherit;">
+                <div id="lowerPlayer" style="font-size: 115%; color: inherit; padding: 2px 6px;">Mamad</div>
+            </div>
+        </div>
+        <div id="lowerTime" style="vertical-align: middle; line-height: 30px; background: rgba(0, 0, 0, 0.8); color: rgba(255, 255, 255, 0.95); font-weight: bold; padding: 0px 5px;">
+            4:12
+        </div>
+    </div>
+</div>
+
+<script>
+    const svg = document.querySelector('#svgCanvas');
+    const upperPlayer = document.querySelector('#upperPlayer');
+    const upperTime = document.querySelector('#upperTime');
+    const turn = document.querySelector('#turn');
+    const name = document.querySelector('#name');
+    const lowerPlayer = document.querySelector('#lowerPlayer');
+    const lowerTime = document.querySelector('#lowerTime');
+
+    function renderField(str) {
+        svg.innerHTML = str;
+    }
+    function renderName(str) {
+        name.innerHTML = str;
+    }
+    function renderUpperPlayer(str) {
+        upperPlayer.innerHTML = str;
+    }
+    function renderUpperTime(str) {
+        upperTime.innerHTML = str;
+    }
+    function renderTurn(str) {
+        turn.innerHTML = str;
+    }
+    function renderLowerPlayer(str) {
+        lowerPlayer.innerHTML = str;
+    }
+    function renderLowerTime(str) {
+        lowerTime.innerHTML = str;
+    }
+
+    function width() {
+        return svg.clientWidth;
+    }
+
+    function height() {
+        return svg.clientHeight;
+    }
+
+    function MyFunction(a) {
+        console.log(a)
+    }
+
+
+</script>
+</body>
+</html>
